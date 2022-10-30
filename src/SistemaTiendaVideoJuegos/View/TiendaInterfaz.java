@@ -37,12 +37,15 @@ public class TiendaInterfaz extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMinimumSize(new java.awt.Dimension(800, 600));
-        setSize(new java.awt.Dimension(700, 500));
+        setSize(new java.awt.Dimension(800, 600));
 
         bgPanel.setMinimumSize(new java.awt.Dimension(800, 600));
+        bgPanel.setPreferredSize(new java.awt.Dimension(800, 600));
         bgPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         inicioPanel.setBackground(new java.awt.Color(255, 255, 255));
+        inicioPanel.setMinimumSize(new java.awt.Dimension(680, 600));
+        inicioPanel.setPreferredSize(new java.awt.Dimension(680, 600));
         inicioPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -55,7 +58,7 @@ public class TiendaInterfaz extends javax.swing.JFrame {
         jLabel2.setText("Tienda Epic Games");
         inicioPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, -1));
 
-        bgPanel.add(inicioPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, 650, 600));
+        bgPanel.add(inicioPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 680, 600));
 
         menuPanel.setBackground(new java.awt.Color(0, 0, 204));
         menuPanel.setForeground(new java.awt.Color(0, 0, 0));
@@ -71,7 +74,7 @@ public class TiendaInterfaz extends javax.swing.JFrame {
                 clientesBtnActionPerformed(evt);
             }
         });
-        menuPanel.add(clientesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 160, -1));
+        menuPanel.add(clientesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 120, -1));
 
         productosBtn.setBackground(new java.awt.Color(0, 0, 204));
         productosBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -82,9 +85,9 @@ public class TiendaInterfaz extends javax.swing.JFrame {
                 productosBtnActionPerformed(evt);
             }
         });
-        menuPanel.add(productosBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 160, -1));
+        menuPanel.add(productosBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 120, -1));
 
-        bgPanel.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 600));
+        bgPanel.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 600));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -102,12 +105,10 @@ public class TiendaInterfaz extends javax.swing.JFrame {
 
     private void clientesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientesBtnActionPerformed
         // TODO add your handling code here:
-        
     }//GEN-LAST:event_clientesBtnActionPerformed
 
     private void productosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productosBtnActionPerformed
         // TODO add your handling code here:
-        
     }//GEN-LAST:event_productosBtnActionPerformed
 
     /**
