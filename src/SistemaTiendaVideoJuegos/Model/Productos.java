@@ -11,9 +11,9 @@ import java.util.Date;
  * @author Ramon Cheno Ocaño
  */
 public class Productos {
-    String nombre, descripcion, generoVideogame;
-    String  desarrollador, distribuidor, fechaLanzamiento;
-    int ventas;
+    private String nombre, descripcion, generoVideogame;
+    private String  desarrollador, distribuidor, fechaLanzamiento;
+    private int ventas;
 
     public String getNombre() {
         return nombre;
