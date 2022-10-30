@@ -37,9 +37,20 @@ public class tablaVideojuegos extends ConnectionMySQL{
             ps = con.prepareStatement(sql);
             ps.setInt(1, pro.getVentas());
             
+            ps.executeUpdate(); 
+            
             sql = "INSERT INTO bd_tienda.empresaDev(nombreDeveloper) value(?)";
             ps = con.prepareStatement(sql);
             ps.setString(1, pro.getDesarrollador());
+            
+            ps.executeUpdate();
+            
+            sql = "INSERT INTO bd_tienda.empresaDistribuidora(nombreEmpresaDistribuidora) value(?)";
+            ps = con.prepareStatement(sql);
+            ps.setString(1, pro.getDistribuidor());
+            
+            ps.executeUpdate();
+            
             return true;
             
         } catch (SQLException e) {
