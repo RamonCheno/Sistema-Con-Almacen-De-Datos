@@ -12,20 +12,8 @@ import java.util.Date;
  */
 public class Productos {
     String nombre, descripcion, generoVideogame;
-    Date fechaLanzamiento;
-    int desarrollador, distribuidor, ventas;
-
-    public Productos(String nombre, String descripcion, String generoVideogame, 
-            Date fechaLanzamiento, int desarrollador, int distribuidor, 
-            int ventas) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.generoVideogame = generoVideogame;
-        this.fechaLanzamiento = fechaLanzamiento;
-        this.desarrollador = desarrollador;
-        this.distribuidor = distribuidor;
-        this.ventas = ventas;
-    }
+    String  desarrollador, distribuidor, fechaLanzamiento;
+    int ventas;
 
     public String getNombre() {
         return nombre;
@@ -51,27 +39,27 @@ public class Productos {
         this.generoVideogame = generoVideogame;
     }
 
-    public Date getFechaLanzamiento() {
+    public String getFechaLanzamiento() {
         return fechaLanzamiento;
     }
 
-    public void setFechaLanzamiento(Date fechaLanzamiento) {
+    public void setFechaLanzamiento(String fechaLanzamiento) {
         this.fechaLanzamiento = fechaLanzamiento;
     }
 
-    public int getDesarrollador() {
+    public String getDesarrollador() {
         return desarrollador;
     }
 
-    public void setDesarrollador(int desarrollador) {
+    public void setDesarrollador(String desarrollador) {
         this.desarrollador = desarrollador;
     }
 
-    public int getDistribuidor() {
+    public String getDistribuidor() {
         return distribuidor;
     }
 
-    public void setDistribuidor(int distribuidor) {
+    public void setDistribuidor(String distribuidor) {
         this.distribuidor = distribuidor;
     }
 
