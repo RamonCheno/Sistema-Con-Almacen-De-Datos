@@ -26,38 +26,89 @@ public class TiendaInterfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        bgPanel = new javax.swing.JPanel();
+        inicioPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        menuPanel = new javax.swing.JPanel();
+        clientesBtn = new javax.swing.JButton();
+        productosBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMinimumSize(new java.awt.Dimension(800, 600));
-        setPreferredSize(new java.awt.Dimension(700, 500));
         setSize(new java.awt.Dimension(700, 500));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
+        bgPanel.setMinimumSize(new java.awt.Dimension(800, 600));
+        bgPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        inicioPanel.setBackground(new java.awt.Color(255, 255, 255));
+        inicioPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Bienvenido");
+        inicioPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Tienda Epic Games");
+        inicioPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, -1));
+
+        bgPanel.add(inicioPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, 650, 600));
+
+        menuPanel.setBackground(new java.awt.Color(0, 0, 204));
+        menuPanel.setForeground(new java.awt.Color(0, 0, 0));
+        menuPanel.setMinimumSize(new java.awt.Dimension(120, 600));
+        menuPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        clientesBtn.setBackground(new java.awt.Color(0, 0, 204));
+        clientesBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        clientesBtn.setText("Clientes");
+        clientesBtn.setBorder(null);
+        clientesBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientesBtnActionPerformed(evt);
+            }
+        });
+        menuPanel.add(clientesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 160, -1));
+
+        productosBtn.setBackground(new java.awt.Color(0, 0, 204));
+        productosBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        productosBtn.setText("Productos");
+        productosBtn.setBorder(null);
+        productosBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                productosBtnActionPerformed(evt);
+            }
+        });
+        menuPanel.add(productosBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 160, -1));
+
+        bgPanel.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 600));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bgPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bgPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void clientesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientesBtnActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_clientesBtnActionPerformed
+
+    private void productosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productosBtnActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_productosBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -95,6 +146,12 @@ public class TiendaInterfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel bgPanel;
+    private javax.swing.JButton clientesBtn;
+    private javax.swing.JPanel inicioPanel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel menuPanel;
+    private javax.swing.JButton productosBtn;
     // End of variables declaration//GEN-END:variables
 }
