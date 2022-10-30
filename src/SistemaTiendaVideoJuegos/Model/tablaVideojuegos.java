@@ -48,7 +48,6 @@ public class tablaVideojuegos extends ConnectionMySQL{
             sql = "INSERT INTO bd_tienda.empresaDistribuidora(nombreEmpresaDistribuidora) value(?)";
             ps = con.prepareStatement(sql);
             ps.setString(1, pro.getDistribuidor());
-            
             ps.executeUpdate();
             
             return true;
