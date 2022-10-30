@@ -32,7 +32,7 @@ public class ProductosInfoPanel extends javax.swing.JPanel {
         inicioPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        productosTable = new javax.swing.JTable();
         transformTxt = new javax.swing.JButton();
         backBtn = new javax.swing.JButton();
         updateProductBtn = new javax.swing.JButton();
@@ -85,10 +85,10 @@ public class ProductosInfoPanel extends javax.swing.JPanel {
 
         jScrollPane1.setBackground(new java.awt.Color(0, 204, 255));
 
-        jTable1.setBackground(new java.awt.Color(0, 153, 255));
-        jTable1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(0, 0, 0));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        productosTable.setBackground(new java.awt.Color(0, 153, 255));
+        productosTable.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        productosTable.setForeground(new java.awt.Color(0, 0, 0));
+        productosTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -99,7 +99,7 @@ public class ProductosInfoPanel extends javax.swing.JPanel {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(productosTable);
 
         inicioPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 620, 410));
 
@@ -148,9 +148,9 @@ public class ProductosInfoPanel extends javax.swing.JPanel {
     private javax.swing.JButton insertProductBtn1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JButton productosBtn;
+    private javax.swing.JTable productosTable;
     private javax.swing.JButton transformTxt;
     private javax.swing.JButton updateProductBtn;
     // End of variables declaration//GEN-END:variables
