@@ -10,7 +10,15 @@ package SistemaTiendaVideoJuegos.Model;
  */
 public class Productos {
     private String nombre, descripcion, generoVideogame;
-    private String  desarrollador, distribuidor, fechaLanzamiento;
+    private String  desarrollador, distribuidor, fechaLanzamiento, plataforma;
+
+    public String getPlataforma() {
+        return plataforma;
+    }
+
+    public void setPlataforma(String plataforma) {
+        this.plataforma = plataforma;
+    }
     private int ventas, id;
 
     public int getId() {
