@@ -26,15 +26,8 @@ public class Productos extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        menuPanel = new javax.swing.JPanel();
-        clientesBtn = new javax.swing.JButton();
-        productosBtn = new javax.swing.JButton();
         inicioPanel = new javax.swing.JPanel();
         menuProductos = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        saveGuardar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -42,70 +35,25 @@ public class Productos extends javax.swing.JPanel {
         deleteBtn = new javax.swing.JButton();
         dataMartBtn = new javax.swing.JButton();
         updateBtn1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        saveGuardar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        nameTxt = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        nameTxt1 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
 
-        setMinimumSize(new java.awt.Dimension(800, 600));
-        setPreferredSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(680, 600));
+        setPreferredSize(new java.awt.Dimension(680, 600));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        menuPanel.setBackground(new java.awt.Color(0, 0, 204));
-        menuPanel.setForeground(new java.awt.Color(0, 0, 0));
-        menuPanel.setMinimumSize(new java.awt.Dimension(120, 600));
-        menuPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        clientesBtn.setBackground(new java.awt.Color(0, 0, 204));
-        clientesBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        clientesBtn.setText("Clientes");
-        clientesBtn.setBorder(null);
-        clientesBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clientesBtnActionPerformed(evt);
-            }
-        });
-        menuPanel.add(clientesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 120, -1));
-
-        productosBtn.setBackground(new java.awt.Color(0, 0, 204));
-        productosBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        productosBtn.setText("Productos");
-        productosBtn.setBorder(null);
-        productosBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                productosBtnActionPerformed(evt);
-            }
-        });
-        menuPanel.add(productosBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 120, -1));
-
-        add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 600));
 
         inicioPanel.setBackground(new java.awt.Color(255, 255, 255));
         inicioPanel.setMinimumSize(new java.awt.Dimension(680, 600));
         inicioPanel.setPreferredSize(new java.awt.Dimension(680, 600));
-        inicioPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         menuProductos.setBackground(new java.awt.Color(0, 0, 204));
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        saveGuardar.setBackground(new java.awt.Color(0, 0, 255));
-        saveGuardar.setText("Guardar ");
-        saveGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveGuardarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(saveGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 514, -1, -1));
-
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Añadir Productos");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Añadir Productos");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, -1));
-
-        menuProductos.addTab("Añadir Productos", jPanel1);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -164,18 +112,73 @@ public class Productos extends javax.swing.JPanel {
 
         menuProductos.addTab("Tabla productos", jPanel2);
 
-        inicioPanel.add(menuProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 600));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMinimumSize(new java.awt.Dimension(680, 600));
+        jPanel1.setPreferredSize(new java.awt.Dimension(680, 600));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        add(inicioPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 680, 600));
+        saveGuardar.setBackground(new java.awt.Color(0, 0, 255));
+        saveGuardar.setText("Guardar ");
+        saveGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveGuardarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(saveGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 514, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Nombre del videojuego");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Añadir Productos");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, -1));
+
+        nameTxt.setBackground(new java.awt.Color(255, 255, 255));
+        nameTxt.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(nameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 110, -1));
+
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Genero del videojuego");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+
+        nameTxt1.setBackground(new java.awt.Color(255, 255, 255));
+        nameTxt1.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(nameTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 110, -1));
+
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Fecha de lanzamiento");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+
+        jFormattedTextField1.setEditable(false);
+        jFormattedTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jFormattedTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        jPanel1.add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 110, -1));
+
+        menuProductos.addTab("Añadir Productos", jPanel1);
+
+        javax.swing.GroupLayout inicioPanelLayout = new javax.swing.GroupLayout(inicioPanel);
+        inicioPanel.setLayout(inicioPanelLayout);
+        inicioPanelLayout.setHorizontalGroup(
+            inicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inicioPanelLayout.createSequentialGroup()
+                .addComponent(menuProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        inicioPanelLayout.setVerticalGroup(
+            inicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inicioPanelLayout.createSequentialGroup()
+                .addComponent(menuProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        add(inicioPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 600));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void clientesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientesBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_clientesBtnActionPerformed
-
-    private void productosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productosBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_productosBtnActionPerformed
 
     private void saveGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveGuardarActionPerformed
         // TODO add your handling code here:
@@ -200,19 +203,21 @@ public class Productos extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
-    private javax.swing.JButton clientesBtn;
     private javax.swing.JButton dataMartBtn;
     private javax.swing.JButton deleteBtn;
     private javax.swing.JPanel inicioPanel;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JPanel menuPanel;
     private javax.swing.JTabbedPane menuProductos;
-    private javax.swing.JButton productosBtn;
+    private javax.swing.JTextField nameTxt;
+    private javax.swing.JTextField nameTxt1;
     private javax.swing.JButton saveGuardar;
     private javax.swing.JButton updateBtn1;
     // End of variables declaration//GEN-END:variables

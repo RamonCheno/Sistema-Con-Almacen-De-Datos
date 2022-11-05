@@ -4,6 +4,10 @@
  */
 package SistemaTiendaVideoJuegos.View;
 
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+import org.netbeans.lib.awtextra.AbsoluteLayout;
+
 /**
  *
  * @author Ramon Cheno Ocaño
@@ -13,8 +17,10 @@ public class TiendaInterfaz extends javax.swing.JFrame {
     /**
      * Creates new form TiendaInterfaz
      */
+    Productos producto = new Productos();
     public TiendaInterfaz() {
         initComponents();
+        
     }
 
     /**
@@ -27,9 +33,7 @@ public class TiendaInterfaz extends javax.swing.JFrame {
     private void initComponents() {
 
         bgPanel = new javax.swing.JPanel();
-        inicioPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        content = new javax.swing.JPanel();
         menuPanel = new javax.swing.JPanel();
         clientesBtn = new javax.swing.JButton();
         productosBtn = new javax.swing.JButton();
@@ -43,22 +47,22 @@ public class TiendaInterfaz extends javax.swing.JFrame {
         bgPanel.setPreferredSize(new java.awt.Dimension(800, 600));
         bgPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        inicioPanel.setBackground(new java.awt.Color(255, 255, 255));
-        inicioPanel.setMinimumSize(new java.awt.Dimension(680, 600));
-        inicioPanel.setPreferredSize(new java.awt.Dimension(680, 600));
-        inicioPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        content.setBackground(new java.awt.Color(255, 255, 255));
+        content.setMinimumSize(new java.awt.Dimension(680, 600));
+        content.setPreferredSize(new java.awt.Dimension(680, 600));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Bienvenido");
-        inicioPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, -1, -1));
+        javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
+        content.setLayout(contentLayout);
+        contentLayout.setHorizontalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 680, Short.MAX_VALUE)
+        );
+        contentLayout.setVerticalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Tienda Epic Games");
-        inicioPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, -1));
-
-        bgPanel.add(inicioPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 680, 600));
+        bgPanel.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 680, 600));
 
         menuPanel.setBackground(new java.awt.Color(0, 0, 204));
         menuPanel.setForeground(new java.awt.Color(0, 0, 0));
@@ -89,28 +93,31 @@ public class TiendaInterfaz extends javax.swing.JFrame {
 
         bgPanel.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 600));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bgPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bgPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(bgPanel, java.awt.BorderLayout.CENTER);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void clientesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientesBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_clientesBtnActionPerformed
 
     private void productosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productosBtnActionPerformed
         // TODO add your handling code here:
+        mostrarPanel(producto);
     }//GEN-LAST:event_productosBtnActionPerformed
 
+    private void clientesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientesBtnActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_clientesBtnActionPerformed
+    
+    void mostrarPanel(JPanel p){
+        p.setSize(680, 600);
+        p.setLocation(0, 0);
+        content.removeAll();
+        content.add(p, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -149,9 +156,7 @@ public class TiendaInterfaz extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bgPanel;
     private javax.swing.JButton clientesBtn;
-    private javax.swing.JPanel inicioPanel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel content;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JButton productosBtn;
     // End of variables declaration//GEN-END:variables
