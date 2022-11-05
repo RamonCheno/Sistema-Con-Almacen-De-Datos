@@ -17,7 +17,7 @@ public class TiendaInterfaz extends javax.swing.JFrame {
     /**
      * Creates new form TiendaInterfaz
      */
-    Productos producto = new Productos();
+    ProductosForm producto = new ProductosForm();
     public TiendaInterfaz() {
         initComponents();
         
