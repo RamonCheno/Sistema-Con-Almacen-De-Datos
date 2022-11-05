@@ -17,7 +17,7 @@ public class TiendaInterfaz extends javax.swing.JFrame {
     /**
      * Creates new form TiendaInterfaz
      */
-    ProductosForm producto = new ProductosForm();
+    ProductosForm productoform = new ProductosForm();
     public TiendaInterfaz() {
         initComponents();
         
@@ -131,7 +131,7 @@ public class TiendaInterfaz extends javax.swing.JFrame {
 
     private void productosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productosBtnActionPerformed
         // TODO add your handling code here:
-        mostrarPanel(producto);
+        mostrarPanel(productoform);
     }//GEN-LAST:event_productosBtnActionPerformed
 
     private void clientesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientesBtnActionPerformed
