@@ -22,12 +22,14 @@ public class tablaVideojuegos extends ConnectionMySQL{
         String sql;
         
         try {
-            sql = "INSERT INTO bd_tienda.videojuegos(Nombre, Genero, Descripcion, fechaLanzamiento ) VALUES(? ? ? ? ? ? )";
+            sql = "INSERT INTO bd_tienda.videojuegos(Nombre, Genero, Descripcion,"
+                    + " fechaLanzamiento, plataforma ) VALUES(? ? ? ? ?)";
             ps = con.prepareStatement(sql);
             ps.setString(1, pro.getNombre());
             ps.setString(2, pro.getGeneroVideogame());
             ps.setString(3, pro.getDescripcion());
             ps.setString(4, pro.getFechaLanzamiento());
+            ps.setString(5, pro.getPlataforma());
             ps.execute();
             
             sql = "INSERT INTO bd_tienda.Ventas(numVentas) VALUE(?)";
