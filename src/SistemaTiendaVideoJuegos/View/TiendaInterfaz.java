@@ -34,13 +34,17 @@ public class TiendaInterfaz extends javax.swing.JFrame {
 
         bgPanel = new javax.swing.JPanel();
         content = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         menuPanel = new javax.swing.JPanel();
         clientesBtn = new javax.swing.JButton();
         productosBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tienda De Videojuego Virtual");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMinimumSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
         setSize(new java.awt.Dimension(800, 600));
 
         bgPanel.setMinimumSize(new java.awt.Dimension(800, 600));
@@ -51,15 +55,32 @@ public class TiendaInterfaz extends javax.swing.JFrame {
         content.setMinimumSize(new java.awt.Dimension(680, 600));
         content.setPreferredSize(new java.awt.Dimension(680, 600));
 
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("EPIC GAMES");
+
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("BIENVENIDOS");
+
         javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
         content.setLayout(contentLayout);
         contentLayout.setHorizontalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
+            .addGroup(contentLayout.createSequentialGroup()
+                .addGap(231, 231, 231)
+                .addComponent(jLabel1))
+            .addGroup(contentLayout.createSequentialGroup()
+                .addGap(230, 230, 230)
+                .addComponent(jLabel2))
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(contentLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel1)
+                .addGap(42, 42, 42)
+                .addComponent(jLabel2))
         );
 
         bgPanel.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 680, 600));
@@ -93,7 +114,16 @@ public class TiendaInterfaz extends javax.swing.JFrame {
 
         bgPanel.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 600));
 
-        getContentPane().add(bgPanel, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(bgPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(bgPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
         setLocationRelativeTo(null);
@@ -157,6 +187,8 @@ public class TiendaInterfaz extends javax.swing.JFrame {
     private javax.swing.JPanel bgPanel;
     private javax.swing.JButton clientesBtn;
     private javax.swing.JPanel content;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JButton productosBtn;
     // End of variables declaration//GEN-END:variables

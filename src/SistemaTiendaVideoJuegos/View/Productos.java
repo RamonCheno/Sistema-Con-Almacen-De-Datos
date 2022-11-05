@@ -28,13 +28,6 @@ public class Productos extends javax.swing.JPanel {
 
         inicioPanel = new javax.swing.JPanel();
         menuProductos = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        backBtn = new javax.swing.JButton();
-        deleteBtn = new javax.swing.JButton();
-        dataMartBtn = new javax.swing.JButton();
-        updateBtn1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         saveGuardar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -43,7 +36,13 @@ public class Productos extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         nameTxt1 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        dateTxt = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        deleteBtn = new javax.swing.JButton();
+        dataMartBtn = new javax.swing.JButton();
+        updateBtn1 = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(680, 600));
         setPreferredSize(new java.awt.Dimension(680, 600));
@@ -55,69 +54,13 @@ public class Productos extends javax.swing.JPanel {
 
         menuProductos.setBackground(new java.awt.Color(0, 0, 204));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTable1.setBackground(new java.awt.Color(51, 153, 255));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {},
-                {},
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 640, 490));
-
-        backBtn.setBackground(new java.awt.Color(0, 0, 255));
-        backBtn.setText("Regresar");
-        backBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBtnActionPerformed(evt);
-            }
-        });
-        jPanel2.add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, -1, -1));
-
-        deleteBtn.setBackground(new java.awt.Color(255, 0, 0));
-        deleteBtn.setText("Eliminar");
-        deleteBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteBtnActionPerformed(evt);
-            }
-        });
-        jPanel2.add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 520, -1, -1));
-
-        dataMartBtn.setBackground(new java.awt.Color(0, 0, 255));
-        dataMartBtn.setText("Data Mart");
-        dataMartBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dataMartBtnActionPerformed(evt);
-            }
-        });
-        jPanel2.add(dataMartBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 520, -1, -1));
-
-        updateBtn1.setBackground(new java.awt.Color(0, 0, 255));
-        updateBtn1.setText("Modificar");
-        updateBtn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateBtn1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(updateBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 520, -1, -1));
-
-        menuProductos.addTab("Tabla productos", jPanel2);
-
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setMinimumSize(new java.awt.Dimension(680, 600));
         jPanel1.setPreferredSize(new java.awt.Dimension(680, 600));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         saveGuardar.setBackground(new java.awt.Color(0, 0, 255));
+        saveGuardar.setForeground(new java.awt.Color(255, 255, 255));
         saveGuardar.setText("Guardar ");
         saveGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,27 +97,70 @@ public class Productos extends javax.swing.JPanel {
         jLabel4.setText("Fecha de lanzamiento");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
 
-        jFormattedTextField1.setEditable(false);
-        jFormattedTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jFormattedTextField1.setForeground(new java.awt.Color(0, 0, 0));
-        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        jPanel1.add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 110, -1));
+        dateTxt.setBackground(new java.awt.Color(255, 255, 255));
+        dateTxt.setForeground(new java.awt.Color(102, 102, 102));
+        dateTxt.setText("dia/mes/año");
+        jPanel1.add(dateTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 110, -1));
 
         menuProductos.addTab("Añadir Productos", jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable1.setBackground(new java.awt.Color(51, 153, 255));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 640, 490));
+
+        deleteBtn.setBackground(new java.awt.Color(255, 0, 0));
+        deleteBtn.setText("Eliminar");
+        deleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBtnActionPerformed(evt);
+            }
+        });
+        jPanel2.add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 520, -1, -1));
+
+        dataMartBtn.setBackground(new java.awt.Color(0, 0, 255));
+        dataMartBtn.setText("Data Mart");
+        dataMartBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dataMartBtnActionPerformed(evt);
+            }
+        });
+        jPanel2.add(dataMartBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 520, -1, -1));
+
+        updateBtn1.setBackground(new java.awt.Color(0, 0, 255));
+        updateBtn1.setText("Modificar");
+        updateBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateBtn1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(updateBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 520, -1, -1));
+
+        menuProductos.addTab("Tabla productos", jPanel2);
 
         javax.swing.GroupLayout inicioPanelLayout = new javax.swing.GroupLayout(inicioPanel);
         inicioPanel.setLayout(inicioPanelLayout);
         inicioPanelLayout.setHorizontalGroup(
             inicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(inicioPanelLayout.createSequentialGroup()
-                .addComponent(menuProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(menuProductos, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         inicioPanelLayout.setVerticalGroup(
             inicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(inicioPanelLayout.createSequentialGroup()
-                .addComponent(menuProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(menuProductos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 600, Short.MAX_VALUE)
         );
 
         add(inicioPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 600));
@@ -196,17 +182,12 @@ public class Productos extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_dataMartBtnActionPerformed
 
-    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_backBtnActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backBtn;
     private javax.swing.JButton dataMartBtn;
+    private javax.swing.JTextField dateTxt;
     private javax.swing.JButton deleteBtn;
     private javax.swing.JPanel inicioPanel;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
