@@ -4,8 +4,6 @@
  */
 package SistemaTiendaVideoJuegos.Model;
 
-import java.util.Date;
-
 /**
  *
  * @author Ramon Cheno Ocaño
@@ -13,7 +11,15 @@ import java.util.Date;
 public class Productos {
     private String nombre, descripcion, generoVideogame;
     private String  desarrollador, distribuidor, fechaLanzamiento;
-    private int ventas;
+    private int ventas, id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNombre() {
         return nombre;
