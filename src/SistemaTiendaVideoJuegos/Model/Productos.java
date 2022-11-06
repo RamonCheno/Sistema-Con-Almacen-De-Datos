@@ -4,13 +4,17 @@
  */
 package SistemaTiendaVideoJuegos.Model;
 
+import java.util.Date;
+
 /**
  *
  * @author Ramon Cheno Ocaño
  */
 public class Productos {
+    
     private String nombre, descripcion, generoVideogame;
-    private String  desarrollador, distribuidor, fechaLanzamiento, plataforma;
+    private Date fechaLanzamiento;
+    private String  desarrollador, distribuidor, plataforma;
 
     public String getPlataforma() {
         return plataforma;
@@ -53,11 +57,11 @@ public class Productos {
         this.generoVideogame = generoVideogame;
     }
 
-    public String getFechaLanzamiento() {
+    public Date getFechaLanzamiento() {
         return fechaLanzamiento;
     }
 
-    public void setFechaLanzamiento(String fechaLanzamiento) {
+    public void setFechaLanzamiento(Date fechaLanzamiento) {
         this.fechaLanzamiento = fechaLanzamiento;
     }
 
