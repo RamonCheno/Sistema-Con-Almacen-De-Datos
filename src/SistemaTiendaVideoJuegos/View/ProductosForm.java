@@ -7,6 +7,11 @@ package SistemaTiendaVideoJuegos.View;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 /**
  *
@@ -228,23 +233,146 @@ public class ProductosForm extends javax.swing.JPanel {
 
         add(inicioPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 600));
     }// </editor-fold>//GEN-END:initComponents
-    
-    String nameVideoGame, genderVideoGame, devCompany, distributionCompany, 
-            description, platform;
-    Date releaseDate;
-    int numberSales;
-    SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
 
+    public JButton getDataMartBtn() {
+        return dataMartBtn;
+    }
+
+    public void setDataMartBtn(JButton dataMartBtn) {
+        this.dataMartBtn = dataMartBtn;
+    }
+
+    public JTextField getDateTxt() {
+        return dateTxt;
+    }
+
+    public void setDateTxt(JTextField dateTxt) {
+        this.dateTxt = dateTxt;
+    }
+
+    public JButton getDeleteBtn() {
+        return deleteBtn;
+    }
+
+    public void setDeleteBtn(JButton deleteBtn) {
+        this.deleteBtn = deleteBtn;
+    }
+
+    public JTextArea getDescriptionTxtA() {
+        return descriptionTxtA;
+    }
+
+    public void setDescriptionTxtA(JTextArea descriptionTxtA) {
+        this.descriptionTxtA = descriptionTxtA;
+    }
+
+    public JTextField getDevCompanyTxt() {
+        return devCompanyTxt;
+    }
+
+    public void setDevCompanyTxt(JTextField devCompanyTxt) {
+        this.devCompanyTxt = devCompanyTxt;
+    }
+
+    public JTextField getDistributionCompanyTxt() {
+        return distributionCompanyTxt;
+    }
+
+    public void setDistributionCompanyTxt(JTextField distributionCompanyTxt) {
+        this.distributionCompanyTxt = distributionCompanyTxt;
+    }
+
+    public JTextField getGenderTxt() {
+        return genderTxt;
+    }
+
+    public void setGenderTxt(JTextField genderTxt) {
+        this.genderTxt = genderTxt;
+    }
+
+    public JLabel getIdLbl() {
+        return idLbl;
+    }
+
+    public void setIdLbl(JLabel idLbl) {
+        this.idLbl = idLbl;
+    }
+
+    public JTextField getIdTxt() {
+        return idTxt;
+    }
+
+    public void setIdTxt(JTextField idTxt) {
+        this.idTxt = idTxt;
+    }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
+    public void setjTable1(JTable jTable1) {
+        this.jTable1 = jTable1;
+    }
+
+    public JTextField getNameTxt() {
+        return nameTxt;
+    }
+
+    public void setNameTxt(JTextField nameTxt) {
+        this.nameTxt = nameTxt;
+    }
+
+    public JTextField getPlatformTxt() {
+        return platformTxt;
+    }
+
+    public void setPlatformTxt(JTextField platformTxt) {
+        this.platformTxt = platformTxt;
+    }
+
+    public JTextField getSalesTxt() {
+        return salesTxt;
+    }
+
+    public void setSalesTxt(JTextField salesTxt) {
+        this.salesTxt = salesTxt;
+    }
+
+    public JButton getSaveGuardar() {
+        return saveGuardar;
+    }
+
+    public void setSaveGuardar(JButton saveGuardar) {
+        this.saveGuardar = saveGuardar;
+    }
+
+    public JButton getSearchBtn() {
+        return searchBtn;
+    }
+
+    public void setSearchBtn(JButton searchBtn) {
+        this.searchBtn = searchBtn;
+    }
+
+    public JButton getUpdateBtn() {
+        return updateBtn;
+    }
+
+    public void setUpdateBtn(JButton updateBtn) {
+        this.updateBtn = updateBtn;
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton dataMartBtn;
-    public javax.swing.JTextField dateTxt;
-    public javax.swing.JButton deleteBtn;
+    private javax.swing.JButton dataMartBtn;
+    private javax.swing.JTextField dateTxt;
+    private javax.swing.JButton deleteBtn;
     private javax.swing.JTextArea descriptionTxtA;
-    public javax.swing.JTextField devCompanyTxt;
-    public javax.swing.JTextField distributionCompanyTxt;
-    public javax.swing.JTextField genderTxt;
+    private javax.swing.JTextField devCompanyTxt;
+    private javax.swing.JTextField distributionCompanyTxt;
+    private javax.swing.JTextField genderTxt;
     private javax.swing.JLabel idLbl;
-    public javax.swing.JTextField idTxt;
+    private javax.swing.JTextField idTxt;
     private javax.swing.JPanel inicioPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -261,11 +389,11 @@ public class ProductosForm extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTabbedPane menuProductos;
-    public javax.swing.JTextField nameTxt;
-    public javax.swing.JTextField platformTxt;
-    public javax.swing.JTextField salesTxt;
+    private javax.swing.JTextField nameTxt;
+    private javax.swing.JTextField platformTxt;
+    private javax.swing.JTextField salesTxt;
     public javax.swing.JButton saveGuardar;
-    public javax.swing.JButton searchBtn;
-    public javax.swing.JButton updateBtn;
+    private javax.swing.JButton searchBtn;
+    private javax.swing.JButton updateBtn;
     // End of variables declaration//GEN-END:variables
 }
