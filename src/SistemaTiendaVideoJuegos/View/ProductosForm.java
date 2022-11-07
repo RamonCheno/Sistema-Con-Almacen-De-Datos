@@ -4,14 +4,9 @@
  */
 package SistemaTiendaVideoJuegos.View;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JLabel;
 import javax.swing.JTable;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
@@ -47,7 +42,7 @@ public class ProductosForm extends javax.swing.JPanel {
         updateBtn = new javax.swing.JButton();
         dataMartBtn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        saveBtn = new javax.swing.JButton();
+        saveEditBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         nameTxt = new javax.swing.JTextField();
@@ -58,12 +53,14 @@ public class ProductosForm extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         salesTxt = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        devCompanyTxt = new javax.swing.JTextField();
-        distributionCompanyTxt = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         platformTxt = new javax.swing.JTextField();
         idTxt = new javax.swing.JTextField();
+        editCB = new javax.swing.JComboBox<>();
+        devCB = new javax.swing.JComboBox<>();
+        saveBtn = new javax.swing.JButton();
+        saveDevBtn = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(680, 600));
         setPreferredSize(new java.awt.Dimension(680, 600));
@@ -117,10 +114,10 @@ public class ProductosForm extends javax.swing.JPanel {
         jPanel1.setPreferredSize(new java.awt.Dimension(680, 600));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        saveBtn.setBackground(new java.awt.Color(0, 0, 255));
-        saveBtn.setForeground(new java.awt.Color(255, 255, 255));
-        saveBtn.setText("Guardar ");
-        jPanel1.add(saveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 514, -1, -1));
+        saveEditBtn.setBackground(new java.awt.Color(0, 0, 255));
+        saveEditBtn.setForeground(new java.awt.Color(255, 255, 255));
+        saveEditBtn.setText("Guardar empresa Editora");
+        jPanel1.add(saveEditBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 510, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -162,20 +159,12 @@ public class ProductosForm extends javax.swing.JPanel {
 
         salesTxt.setBackground(new java.awt.Color(255, 255, 255));
         salesTxt.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(salesTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 110, -1));
+        jPanel1.add(salesTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 110, -1));
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Empresa desarrolladora");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
-
-        devCompanyTxt.setBackground(new java.awt.Color(255, 255, 255));
-        devCompanyTxt.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(devCompanyTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 110, -1));
-
-        distributionCompanyTxt.setBackground(new java.awt.Color(255, 255, 255));
-        distributionCompanyTxt.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(distributionCompanyTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 110, -1));
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
@@ -195,6 +184,28 @@ public class ProductosForm extends javax.swing.JPanel {
         idTxt.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(idTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 100, -1));
 
+        editCB.setBackground(new java.awt.Color(255, 255, 255));
+        editCB.setEditable(true);
+        editCB.setForeground(new java.awt.Color(0, 0, 0));
+        editCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(editCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 110, -1));
+
+        devCB.setBackground(new java.awt.Color(255, 255, 255));
+        devCB.setEditable(true);
+        devCB.setForeground(new java.awt.Color(0, 0, 0));
+        devCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(devCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 110, -1));
+
+        saveBtn.setBackground(new java.awt.Color(0, 0, 255));
+        saveBtn.setForeground(new java.awt.Color(255, 255, 255));
+        saveBtn.setText(" Guardar Videojuego");
+        jPanel1.add(saveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 510, -1, -1));
+
+        saveDevBtn.setBackground(new java.awt.Color(0, 0, 255));
+        saveDevBtn.setForeground(new java.awt.Color(255, 255, 255));
+        saveDevBtn.setText("Guardar empresa Desarrolladora");
+        jPanel1.add(saveDevBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 510, -1, -1));
+
         menuProductos.addTab("Añadir Productos", jPanel1);
 
         javax.swing.GroupLayout inicioPanelLayout = new javax.swing.GroupLayout(inicioPanel);
@@ -211,125 +222,74 @@ public class ProductosForm extends javax.swing.JPanel {
         add(inicioPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 600));
     }// </editor-fold>//GEN-END:initComponents
 
-    public JButton getDataMartBtn() {
-        return dataMartBtn;
+    public JButton getSaveDevBtn() {
+        return saveDevBtn;
     }
 
-    public void setDataMartBtn(JButton dataMartBtn) {
-        this.dataMartBtn = dataMartBtn;
+    public JButton getSaveEditBtn() {
+        return saveEditBtn;
+    }
+
+    public JButton getDataMartBtn() {
+        return dataMartBtn;
     }
 
     public JTextField getDateTxt() {
         return dateTxt;
     }
 
-    public void setDateTxt(JTextField dateTxt) {
-        this.dateTxt = dateTxt;
-    }
-
     public JButton getDeleteBtn() {
         return deleteBtn;
     }
 
-    public void setDeleteBtn(JButton deleteBtn) {
-        this.deleteBtn = deleteBtn;
+    public JComboBox<String> getDevCB() {
+        return devCB;
     }
 
-    public JTextField getDevCompanyTxt() {
-        return devCompanyTxt;
-    }
-
-    public void setDevCompanyTxt(JTextField devCompanyTxt) {
-        this.devCompanyTxt = devCompanyTxt;
-    }
-
-    public JTextField getDistributionCompanyTxt() {
-        return distributionCompanyTxt;
-    }
-
-    public void setDistributionCompanyTxt(JTextField distributionCompanyTxt) {
-        this.distributionCompanyTxt = distributionCompanyTxt;
+    public JComboBox<String> getEditCB() {
+        return editCB;
     }
 
     public JTextField getGenderTxt() {
         return genderTxt;
     }
 
-    public void setGenderTxt(JTextField genderTxt) {
-        this.genderTxt = genderTxt;
-    }
-
     public JTextField getIdTxt() {
         return idTxt;
-    }
-
-    public void setIdTxt(JTextField idTxt) {
-        this.idTxt = idTxt;
-    }
-
-    public JTable getjTable1() {
-        return jTable1;
-    }
-
-    public void setjTable1(JTable jTable1) {
-        this.jTable1 = jTable1;
     }
 
     public JTextField getNameTxt() {
         return nameTxt;
     }
 
-    public void setNameTxt(JTextField nameTxt) {
-        this.nameTxt = nameTxt;
-    }
-
     public JTextField getPlatformTxt() {
         return platformTxt;
-    }
-
-    public void setPlatformTxt(JTextField platformTxt) {
-        this.platformTxt = platformTxt;
     }
 
     public JTextField getSalesTxt() {
         return salesTxt;
     }
 
-    public void setSalesTxt(JTextField salesTxt) {
-        this.salesTxt = salesTxt;
-    }
-
     public JButton getSaveBtn() {
         return saveBtn;
-    }
-
-    public void setSaveBtn(JButton saveBtn) {
-        this.saveBtn = saveBtn;
     }
 
     public JButton getSearchBtn() {
         return searchBtn;
     }
 
-    public void setSearchBtn(JButton searchBtn) {
-        this.searchBtn = searchBtn;
-    }
-
     public JButton getUpdateBtn() {
         return updateBtn;
     }
-
-    public void setUpdateBtn(JButton updateBtn) {
-        this.updateBtn = updateBtn;
-    }
+    
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton dataMartBtn;
     private javax.swing.JTextField dateTxt;
     private javax.swing.JButton deleteBtn;
-    private javax.swing.JTextField devCompanyTxt;
-    private javax.swing.JTextField distributionCompanyTxt;
+    private javax.swing.JComboBox<String> devCB;
+    private javax.swing.JComboBox<String> editCB;
     private javax.swing.JTextField genderTxt;
     private javax.swing.JTextField idTxt;
     private javax.swing.JPanel inicioPanel;
@@ -350,6 +310,8 @@ public class ProductosForm extends javax.swing.JPanel {
     private javax.swing.JTextField platformTxt;
     private javax.swing.JTextField salesTxt;
     private javax.swing.JButton saveBtn;
+    private javax.swing.JButton saveDevBtn;
+    private javax.swing.JButton saveEditBtn;
     private javax.swing.JButton searchBtn;
     private javax.swing.JButton updateBtn;
     // End of variables declaration//GEN-END:variables
