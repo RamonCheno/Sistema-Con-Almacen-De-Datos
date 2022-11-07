@@ -13,15 +13,15 @@ import java.sql.SQLException;
  * @author Ramon Cheno Ocaño
  */
 public class ConnectionMySQL {
+    
     public static final String URL = "jdbc:mysql://localhost:3306/bd_tienda";
     public static final String USER = "root";
-    public static final String CLAVE = "";
-    
+    public static final String CLAVE = "Admin26032001.";
+    Connection con = null;
     public Connection getConexion(){
-        Connection con = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = (Connection) DriverManager.getConnection(URL, USER, USER);
+            con = (Connection) DriverManager.getConnection(URL, USER, CLAVE);
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Error: " + e.getMessage());
         }

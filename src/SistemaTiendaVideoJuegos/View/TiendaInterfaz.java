@@ -4,6 +4,9 @@
  */
 package SistemaTiendaVideoJuegos.View;
 
+import SistemaTiendaVideoJuegos.Controller.ControllerProduct;
+import SistemaTiendaVideoJuegos.Model.Productos;
+import SistemaTiendaVideoJuegos.Model.Sql.tablaVideojuegos;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import org.netbeans.lib.awtextra.AbsoluteLayout;
@@ -17,7 +20,6 @@ public class TiendaInterfaz extends javax.swing.JFrame {
     /**
      * Creates new form TiendaInterfaz
      */
-    ProductosForm productoform = new ProductosForm();
     public TiendaInterfaz() {
         initComponents();
         
@@ -131,7 +133,11 @@ public class TiendaInterfaz extends javax.swing.JFrame {
 
     private void productosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productosBtnActionPerformed
         // TODO add your handling code here:
+        ProductosForm productoform = new ProductosForm();
         mostrarPanel(productoform);
+         Productos productC = new Productos();
+         tablaVideojuegos tb_GamesC = new tablaVideojuegos();
+         ControllerProduct ctrl = new ControllerProduct(productC, tb_GamesC, productoform);
     }//GEN-LAST:event_productosBtnActionPerformed
 
     private void clientesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientesBtnActionPerformed
@@ -179,6 +185,7 @@ public class TiendaInterfaz extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TiendaInterfaz().setVisible(true);
+                
             }
         });
     }

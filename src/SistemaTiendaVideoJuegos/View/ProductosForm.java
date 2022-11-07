@@ -8,6 +8,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
@@ -24,6 +25,7 @@ public class ProductosForm extends javax.swing.JPanel {
      */
     public ProductosForm() {
         initComponents();
+        idTxt.setVisible(false);
     }
 
     /**
@@ -44,10 +46,8 @@ public class ProductosForm extends javax.swing.JPanel {
         searchBtn = new javax.swing.JButton();
         updateBtn = new javax.swing.JButton();
         dataMartBtn = new javax.swing.JButton();
-        idLbl = new javax.swing.JLabel();
-        idTxt = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        saveGuardar = new javax.swing.JButton();
+        saveBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         nameTxt = new javax.swing.JTextField();
@@ -59,13 +59,11 @@ public class ProductosForm extends javax.swing.JPanel {
         salesTxt = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         devCompanyTxt = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
         distributionCompanyTxt = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        descriptionTxtA = new javax.swing.JTextArea();
         jLabel9 = new javax.swing.JLabel();
         platformTxt = new javax.swing.JTextField();
+        idTxt = new javax.swing.JTextField();
 
         setMinimumSize(new java.awt.Dimension(680, 600));
         setPreferredSize(new java.awt.Dimension(680, 600));
@@ -112,15 +110,6 @@ public class ProductosForm extends javax.swing.JPanel {
         dataMartBtn.setText("Data Mart");
         jPanel2.add(dataMartBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 520, -1, -1));
 
-        idLbl.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        idLbl.setForeground(new java.awt.Color(0, 0, 0));
-        idLbl.setText("id");
-        jPanel2.add(idLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, -1, -1));
-
-        idTxt.setBackground(new java.awt.Color(255, 255, 255));
-        idTxt.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel2.add(idTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, 30, -1));
-
         menuProductos.addTab("Tabla productos", jPanel2);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -128,10 +117,10 @@ public class ProductosForm extends javax.swing.JPanel {
         jPanel1.setPreferredSize(new java.awt.Dimension(680, 600));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        saveGuardar.setBackground(new java.awt.Color(0, 0, 255));
-        saveGuardar.setForeground(new java.awt.Color(255, 255, 255));
-        saveGuardar.setText("Guardar ");
-        jPanel1.add(saveGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 514, -1, -1));
+        saveBtn.setBackground(new java.awt.Color(0, 0, 255));
+        saveBtn.setForeground(new java.awt.Color(255, 255, 255));
+        saveBtn.setText("Guardar ");
+        jPanel1.add(saveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 514, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -163,7 +152,7 @@ public class ProductosForm extends javax.swing.JPanel {
 
         dateTxt.setBackground(new java.awt.Color(255, 255, 255));
         dateTxt.setForeground(new java.awt.Color(102, 102, 102));
-        dateTxt.setText("dia/mes/año");
+        dateTxt.setText("Año/Mes/Dia");
         jPanel1.add(dateTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 110, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -184,11 +173,6 @@ public class ProductosForm extends javax.swing.JPanel {
         devCompanyTxt.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(devCompanyTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 110, -1));
 
-        jLabel7.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Descripcion del videojuego");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
-
         distributionCompanyTxt.setBackground(new java.awt.Color(255, 255, 255));
         distributionCompanyTxt.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(distributionCompanyTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 110, -1));
@@ -198,17 +182,6 @@ public class ProductosForm extends javax.swing.JPanel {
         jLabel8.setText("Empresa editora");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
-        jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane2.setForeground(new java.awt.Color(0, 0, 0));
-
-        descriptionTxtA.setBackground(new java.awt.Color(255, 255, 255));
-        descriptionTxtA.setColumns(20);
-        descriptionTxtA.setForeground(new java.awt.Color(0, 0, 0));
-        descriptionTxtA.setRows(5);
-        jScrollPane2.setViewportView(descriptionTxtA);
-
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
-
         jLabel9.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Plataforma");
@@ -217,6 +190,10 @@ public class ProductosForm extends javax.swing.JPanel {
         platformTxt.setBackground(new java.awt.Color(255, 255, 255));
         platformTxt.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(platformTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 110, -1));
+
+        idTxt.setBackground(new java.awt.Color(255, 255, 255));
+        idTxt.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(idTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 100, -1));
 
         menuProductos.addTab("Añadir Productos", jPanel1);
 
@@ -258,14 +235,6 @@ public class ProductosForm extends javax.swing.JPanel {
         this.deleteBtn = deleteBtn;
     }
 
-    public JTextArea getDescriptionTxtA() {
-        return descriptionTxtA;
-    }
-
-    public void setDescriptionTxtA(JTextArea descriptionTxtA) {
-        this.descriptionTxtA = descriptionTxtA;
-    }
-
     public JTextField getDevCompanyTxt() {
         return devCompanyTxt;
     }
@@ -288,14 +257,6 @@ public class ProductosForm extends javax.swing.JPanel {
 
     public void setGenderTxt(JTextField genderTxt) {
         this.genderTxt = genderTxt;
-    }
-
-    public JLabel getIdLbl() {
-        return idLbl;
-    }
-
-    public void setIdLbl(JLabel idLbl) {
-        this.idLbl = idLbl;
     }
 
     public JTextField getIdTxt() {
@@ -338,12 +299,12 @@ public class ProductosForm extends javax.swing.JPanel {
         this.salesTxt = salesTxt;
     }
 
-    public JButton getSaveGuardar() {
-        return saveGuardar;
+    public JButton getSaveBtn() {
+        return saveBtn;
     }
 
-    public void setSaveGuardar(JButton saveGuardar) {
-        this.saveGuardar = saveGuardar;
+    public void setSaveBtn(JButton saveBtn) {
+        this.saveBtn = saveBtn;
     }
 
     public JButton getSearchBtn() {
@@ -367,11 +328,9 @@ public class ProductosForm extends javax.swing.JPanel {
     private javax.swing.JButton dataMartBtn;
     private javax.swing.JTextField dateTxt;
     private javax.swing.JButton deleteBtn;
-    private javax.swing.JTextArea descriptionTxtA;
     private javax.swing.JTextField devCompanyTxt;
     private javax.swing.JTextField distributionCompanyTxt;
     private javax.swing.JTextField genderTxt;
-    private javax.swing.JLabel idLbl;
     private javax.swing.JTextField idTxt;
     private javax.swing.JPanel inicioPanel;
     private javax.swing.JLabel jLabel1;
@@ -380,19 +339,17 @@ public class ProductosForm extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTabbedPane menuProductos;
     private javax.swing.JTextField nameTxt;
     private javax.swing.JTextField platformTxt;
     private javax.swing.JTextField salesTxt;
-    public javax.swing.JButton saveGuardar;
+    private javax.swing.JButton saveBtn;
     private javax.swing.JButton searchBtn;
     private javax.swing.JButton updateBtn;
     // End of variables declaration//GEN-END:variables
