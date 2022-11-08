@@ -4,6 +4,7 @@
  */
 package SistemaTiendaVideoJuegos.View;
 
+import SistemaTiendaVideoJuegos.Controller.ControllerProduct;
 import SistemaTiendaVideoJuegos.Model.Productos;
 import SistemaTiendaVideoJuegos.Model.Sql.tablaVideojuegos;
 import java.awt.BorderLayout;
@@ -20,7 +21,7 @@ public class TiendaInterfaz extends javax.swing.JFrame {
      */
     public TiendaInterfaz() {
         initComponents();
-        
+
     }
 
     /**
@@ -133,17 +134,17 @@ public class TiendaInterfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
         ProductosForm productoform = new ProductosForm();
         mostrarPanel(productoform);
-         Productos productC = new Productos();
-         tablaVideojuegos tb_GamesC = new tablaVideojuegos();
-         //ControllerProduct ctrl = new ControllerProduct(productC, tb_GamesC, productoform);
+        Productos productC = new Productos();
+        tablaVideojuegos tb_GamesC = new tablaVideojuegos();
+        ControllerProduct ctrl = new ControllerProduct(productC, tb_GamesC, productoform);
     }//GEN-LAST:event_productosBtnActionPerformed
 
     private void clientesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientesBtnActionPerformed
         // TODO add your handling code here:
 
     }//GEN-LAST:event_clientesBtnActionPerformed
-    
-    void mostrarPanel(JPanel p){
+
+    void mostrarPanel(JPanel p) {
         p.setSize(680, 600);
         p.setLocation(0, 0);
         content.removeAll();
@@ -151,7 +152,7 @@ public class TiendaInterfaz extends javax.swing.JFrame {
         content.revalidate();
         content.repaint();
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -183,7 +184,7 @@ public class TiendaInterfaz extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TiendaInterfaz().setVisible(true);
-                
+
             }
         });
     }

@@ -188,13 +188,13 @@ public class ProductosForm extends javax.swing.JPanel {
         editCB.setEditable(true);
         editCB.setForeground(new java.awt.Color(0, 0, 0));
         editCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(editCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 110, -1));
+        jPanel1.add(editCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 220, -1));
 
         devCB.setBackground(new java.awt.Color(255, 255, 255));
         devCB.setEditable(true);
         devCB.setForeground(new java.awt.Color(0, 0, 0));
         devCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(devCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 110, -1));
+        jPanel1.add(devCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 230, -1));
 
         saveBtn.setBackground(new java.awt.Color(0, 0, 255));
         saveBtn.setForeground(new java.awt.Color(255, 255, 255));
