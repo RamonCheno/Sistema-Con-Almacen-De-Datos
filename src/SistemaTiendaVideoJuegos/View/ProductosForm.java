@@ -36,11 +36,12 @@ public class ProductosForm extends javax.swing.JPanel {
         menuProductos = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        VideoGamesTB = new javax.swing.JTable();
         deleteBtn = new javax.swing.JButton();
         searchBtn = new javax.swing.JButton();
         updateBtn = new javax.swing.JButton();
         dataMartBtn = new javax.swing.JButton();
+        refreshTableBtn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         saveEditBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -61,22 +62,29 @@ public class ProductosForm extends javax.swing.JPanel {
         devCB = new javax.swing.JComboBox<>();
         saveBtn = new javax.swing.JButton();
         saveDevBtn = new javax.swing.JButton();
+        refreshCompanyBtn = new javax.swing.JButton();
 
-        setMinimumSize(new java.awt.Dimension(680, 600));
-        setPreferredSize(new java.awt.Dimension(680, 600));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setMinimumSize(new java.awt.Dimension(780, 600));
+        setPreferredSize(new java.awt.Dimension(780, 600));
 
         inicioPanel.setBackground(new java.awt.Color(255, 255, 255));
-        inicioPanel.setMinimumSize(new java.awt.Dimension(680, 600));
-        inicioPanel.setPreferredSize(new java.awt.Dimension(680, 600));
+        inicioPanel.setMinimumSize(new java.awt.Dimension(780, 600));
+        inicioPanel.setPreferredSize(new java.awt.Dimension(780, 600));
 
         menuProductos.setBackground(new java.awt.Color(0, 0, 204));
+        menuProductos.setMinimumSize(new java.awt.Dimension(780, 600));
+        menuProductos.setPreferredSize(new java.awt.Dimension(780, 600));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setMinimumSize(new java.awt.Dimension(780, 600));
+        jPanel2.setPreferredSize(new java.awt.Dimension(780, 600));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setBackground(new java.awt.Color(51, 153, 255));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jScrollPane1.setName(""); // NOI18N
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(760, 490));
+
+        VideoGamesTB.setBackground(new java.awt.Color(51, 153, 255));
+        VideoGamesTB.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -87,31 +95,41 @@ public class ProductosForm extends javax.swing.JPanel {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        VideoGamesTB.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane1.setViewportView(VideoGamesTB);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 570, 480));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         deleteBtn.setBackground(new java.awt.Color(255, 0, 0));
+        deleteBtn.setForeground(new java.awt.Color(255, 255, 255));
         deleteBtn.setText("Eliminar");
         jPanel2.add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 520, -1, -1));
 
         searchBtn.setBackground(new java.awt.Color(0, 0, 255));
+        searchBtn.setForeground(new java.awt.Color(255, 255, 255));
         searchBtn.setText("Buscar");
-        jPanel2.add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 520, -1, -1));
+        jPanel2.add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 520, -1, -1));
 
         updateBtn.setBackground(new java.awt.Color(0, 0, 255));
+        updateBtn.setForeground(new java.awt.Color(255, 255, 255));
         updateBtn.setText("Modificar");
         jPanel2.add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 520, -1, -1));
 
         dataMartBtn.setBackground(new java.awt.Color(0, 0, 255));
+        dataMartBtn.setForeground(new java.awt.Color(255, 255, 255));
         dataMartBtn.setText("Data Mart");
-        jPanel2.add(dataMartBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 520, -1, -1));
+        jPanel2.add(dataMartBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 520, -1, -1));
+
+        refreshTableBtn.setBackground(new java.awt.Color(0, 0, 255));
+        refreshTableBtn.setForeground(new java.awt.Color(255, 255, 255));
+        refreshTableBtn.setText("Refrescar Tabla");
+        jPanel2.add(refreshTableBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 520, -1, -1));
 
         menuProductos.addTab("Tabla productos", jPanel2);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMinimumSize(new java.awt.Dimension(680, 600));
-        jPanel1.setPreferredSize(new java.awt.Dimension(680, 600));
+        jPanel1.setMinimumSize(new java.awt.Dimension(780, 600));
+        jPanel1.setPreferredSize(new java.awt.Dimension(780, 600));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         saveEditBtn.setBackground(new java.awt.Color(0, 0, 255));
@@ -206,21 +224,43 @@ public class ProductosForm extends javax.swing.JPanel {
         saveDevBtn.setText("Guardar empresa Desarrolladora");
         jPanel1.add(saveDevBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 510, -1, -1));
 
+        refreshCompanyBtn.setBackground(new java.awt.Color(0, 0, 255));
+        refreshCompanyBtn.setForeground(new java.awt.Color(255, 255, 255));
+        refreshCompanyBtn.setText("Refrescar Empresas");
+        jPanel1.add(refreshCompanyBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 270, -1, -1));
+
         menuProductos.addTab("Añadir Productos", jPanel1);
 
         javax.swing.GroupLayout inicioPanelLayout = new javax.swing.GroupLayout(inicioPanel);
         inicioPanel.setLayout(inicioPanelLayout);
         inicioPanelLayout.setHorizontalGroup(
             inicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(menuProductos, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(menuProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         inicioPanelLayout.setVerticalGroup(
             inicioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(menuProductos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 600, Short.MAX_VALUE)
+            .addComponent(menuProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        add(inicioPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 600));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(inicioPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(inicioPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
     }// </editor-fold>//GEN-END:initComponents
+
+    public JTable getVideoGamesJTB() {
+        return VideoGamesTB;
+    }
+    
+    public JButton getRefreshCompanyBtn() {
+        return refreshCompanyBtn;
+    }
 
     public JButton getSaveDevBtn() {
         return saveDevBtn;
@@ -281,10 +321,15 @@ public class ProductosForm extends javax.swing.JPanel {
     public JButton getUpdateBtn() {
         return updateBtn;
     }
+
+    public JButton getRefreshTableBtn() {
+        return refreshTableBtn;
+    }
     
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable VideoGamesTB;
     private javax.swing.JButton dataMartBtn;
     private javax.swing.JTextField dateTxt;
     private javax.swing.JButton deleteBtn;
@@ -304,10 +349,11 @@ public class ProductosForm extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTabbedPane menuProductos;
     private javax.swing.JTextField nameTxt;
     private javax.swing.JTextField platformTxt;
+    private javax.swing.JButton refreshCompanyBtn;
+    private javax.swing.JButton refreshTableBtn;
     private javax.swing.JTextField salesTxt;
     private javax.swing.JButton saveBtn;
     private javax.swing.JButton saveDevBtn;
