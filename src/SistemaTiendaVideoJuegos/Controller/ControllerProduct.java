@@ -15,31 +15,27 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Ramon Cheno Ocaño
  */
-public class ControllerProduct implements ActionListener {
+public final class ControllerProduct implements ActionListener {
 
-    private Productos productC;
+    private final Productos productC;
     private tablaVideojuegos tbGameC;
-    private ProductosForm productF;
+    private final ProductosForm productF;
 
     public ControllerProduct(Productos productC, tablaVideojuegos tbGameC, ProductosForm productF) {
         this.productC = productC;
         this.tbGameC = tbGameC;
         this.productF = productF;
-        this.productF.getSaveBtn().addActionListener(this);
-        this.productF.getSaveDevBtn().addActionListener(this);
-        this.productF.getUpdateBtn().addActionListener(this);
-        this.productF.getDeleteBtn().addActionListener(this);
-        this.productF.getSearchBtn().addActionListener(this);
-        this.productF.getDataMartBtn().addActionListener(this);
-        this.productF.getSaveEditBtn().addActionListener(this);
+        botonesEjecutados(this.productF);
         listaEmpresaDev();
+        listaEmpresaEdit();
+        tablaVideojuegoC();
     }
 
     SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
@@ -48,6 +44,8 @@ public class ControllerProduct implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == productF.getSaveBtn()) {
             actionSaveData();
+            listaEmpresaDev();
+            listaEmpresaEdit();
         }
         if (e.getSource() == productF.getSaveDevBtn()) {
             actionSaveDev();
@@ -55,16 +53,64 @@ public class ControllerProduct implements ActionListener {
         if (e.getSource() == productF.getSaveEditBtn()) {
             actionSaveEdit();
         }
+        if(e.getSource() == productF.getRefreshCompanyBtn()){
+            listaEmpresaDev();
+            listaEmpresaEdit();
+        }
+        if(e.getSource() == productF.getRefreshTableBtn()){
+            tablaVideojuegoC();
+        }
+    }
+    
+    private void botonesEjecutados(ProductosForm productF){
+        productF.getSaveBtn().addActionListener(this);
+        productF.getSaveDevBtn().addActionListener(this);
+        productF.getUpdateBtn().addActionListener(this);
+        productF.getDeleteBtn().addActionListener(this);
+        productF.getSearchBtn().addActionListener(this);
+        productF.getDataMartBtn().addActionListener(this);
+        productF.getSaveEditBtn().addActionListener(this);
+        productF.getDevCB().addActionListener(this);
+        productF.getRefreshCompanyBtn().addActionListener(this);
+        productF.getRefreshTableBtn().addActionListener(this);
+    }
+    
+    public void tablaVideojuegoC(){
+        ArrayList<Productos> listaP;
+        String[] fila = new String[8];
+        DefaultTableModel tablaGameC = new DefaultTableModel();
+        tablaGameC.addColumn("Id");
+        tablaGameC.addColumn("nombre Videojuego");
+        tablaGameC.addColumn("Genero Videojuego");
+        tablaGameC.addColumn("Fecha de lanzamiento");
+        tablaGameC.addColumn("Plataforma");
+        tablaGameC.addColumn("Numero de ventas");
+        tablaGameC.addColumn("Empresa Desarrolladora");
+        tablaGameC.addColumn("Empresa Editora");
+        listaP = tbGameC.mostrarVideojuego();
+        for (int i = 0; i < listaP.size(); i++) {
+            fila[0] = String.valueOf(listaP.get(i).getIdVideojuego());
+            fila[1] = listaP.get(i).getNombreVideojuego();
+            fila[2] = listaP.get(i).getGeneroVideojuego();
+            fila[3] = formato.format(listaP.get(i).getFechaLanzamiento());
+            fila[4] = listaP.get(i).getPlataforma();
+            fila[5] = String.valueOf(listaP.get(i).getNumVentas());
+            fila[6] = listaP.get(i).getEmpresaDev();;
+            fila[7] = listaP.get(i).getEmpresaEditor();
+            tablaGameC.addRow(fila);
+        }
+        
+        productF.getVideoGamesJTB().setModel(tablaGameC);
     }
 
     private void actionSaveEdit() {
         productC.setEmpresaEditor(productF.getEditCB().getSelectedItem().toString());
         if (tbGameC.registrarEmpresaEdit(productC)) {
             JOptionPane.showMessageDialog(null, "Registro Guardado");
-            limpiar();
+            //limpiar();
         } else {
             JOptionPane.showMessageDialog(null, "Error al guardar");
-            limpiar();
+            //limpiar();
         }
     }
 
@@ -72,9 +118,19 @@ public class ControllerProduct implements ActionListener {
         productF.getDevCB().removeAllItems();
         tbGameC = new tablaVideojuegos();
         ArrayList<Productos> listaDev = tbGameC.listaEmpesaDev();
-        productF.getDevCB().addItem("Seleccione la empresa de desarrollador del videojuego");
+        productF.getDevCB().addItem("");
         for (int i = 0; i < listaDev.size(); i++) {
             productF.getDevCB().addItem(listaDev.get(i).getEmpresaDev());
+        }
+    }
+    
+    private void listaEmpresaEdit(){
+        productF.getEditCB().removeAllItems();
+        tbGameC = new tablaVideojuegos();
+        ArrayList<Productos> listEdit = tbGameC.listaEmpresaEdit();
+        productF.getEditCB().addItem("");
+        for (int i = 0; i < listEdit.size(); i++) {
+            productF.getEditCB().addItem(listEdit.get(i).getEmpresaEditor());
         }
     }
 
@@ -82,10 +138,10 @@ public class ControllerProduct implements ActionListener {
         productC.setEmpresaDev(productF.getDevCB().getSelectedItem().toString());
         if (tbGameC.registrarEmpresaDev(productC)) {
             JOptionPane.showMessageDialog(null, "Registro Guardado");
-            limpiar();
+            //limpiar();
         } else {
             JOptionPane.showMessageDialog(null, "Error al guardar");
-            limpiar();
+            //limpiar();
         }
     }
 
@@ -101,7 +157,7 @@ public class ControllerProduct implements ActionListener {
         productC.setNumVentas(Integer.parseInt(productF.getSalesTxt().getText()));
         productC.setPlataforma(productF.getPlatformTxt().getText());
         productC.setIdeEmpresaDev(productF.getDevCB().getSelectedIndex());
-        //productC.setIdEmpresaEditor(productF.getEditCB().getSelectedIndex());
+        productC.setIdEmpresaEditor(productF.getEditCB().getSelectedIndex());
         if (tbGameC.registrarProducto(productC)) {
             JOptionPane.showMessageDialog(null, "Registro Guardado");
             limpiar();
@@ -109,6 +165,7 @@ public class ControllerProduct implements ActionListener {
             JOptionPane.showMessageDialog(null, "Error al guardar");
             limpiar();
         }
+        tablaVideojuegoC();
     }
 
     public void limpiar() {
