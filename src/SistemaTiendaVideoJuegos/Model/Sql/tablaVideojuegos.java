@@ -165,13 +165,7 @@ public class tablaVideojuegos extends ConnectionMySQL {
     }
     
     public ArrayList<Productos> mostrarVideojuego(){
-        /*
-            select v.Id_videojuegos, v.Nombre, v.Genero, v.fechaLanzamiento, v.plataforma, v.numVentas, dev.nombreDeveloper, 
-            edit.nombreEmpresaEditora
-            from videojuegos as v
-            inner join empresadev as dev on v.empresaDev_id_empresaDev = dev.id_empresaDev 
-            inner join empresaeditora as edit on v.empresaEditora_id_empresaEditora = edit.id_empresaEditora;
-        */
+       
         PreparedStatement ps = null;
         Connection con = getConexion();
         String sql;
