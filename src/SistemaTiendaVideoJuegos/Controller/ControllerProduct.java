@@ -22,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Ramon Cheno Ocaño
  */
-public final class ControllerProduct implements ActionListener {
+public final class ControllerProduct implements ActionListener{
 
     private final Productos productC;
     private tablaVideojuegos tbGameC;
@@ -53,29 +53,101 @@ public final class ControllerProduct implements ActionListener {
         if (e.getSource() == productF.getSaveEditBtn()) {
             actionSaveEdit();
         }
-        if(e.getSource() == productF.getRefreshCompanyBtn()){
+        if (e.getSource() == productF.getRefreshCompanyBtn()) {
             listaEmpresaDev();
             listaEmpresaEdit();
         }
-        if(e.getSource() == productF.getRefreshTableBtn()){
+        if (e.getSource() == productF.getRefreshTableBtn()) {
             tablaVideojuegoC();
         }
+        if (e.getSource() == productF.getUpdateBtn()) {
+            editarProducto();
+        }
+        if (e.getSource() == productF.getDeleteBtn()) {
+            eliminarProducto();
+        }
+        if(e.getSource() == productF.getSearchBtn()){
+            buscarProducto();
+            productF.getIdTxt().setVisible(true);
+            productF.getIdTxt().setEditable(false);
+        }
     }
+
+    private void editarProducto() {
+        productC.setIdVideojuego(Integer.parseInt(productF.getIdTxt().getText()));
+        productC.setNombreVideojuego(productF.getNameTxt().getText());
+        productC.setGeneroVideojuego(productF.getGenderTxt().getText());
+        try {
+            productC.setFechaLanzamiento(formato.parse(productF.getDateTxt().getText()));
+        } catch (ParseException ex) {
+            Logger.getLogger(ControllerProduct.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Error: " + ex);
+        }
+        productC.setNumVentas(Integer.parseInt(productF.getSalesTxt().getText()));
+        productC.setPlataforma(productF.getPlatformTxt().getText());
+        productC.setIdeEmpresaDev(productF.getDevCB().getSelectedIndex());
+        productC.setIdEmpresaEditor(productF.getEditCB().getSelectedIndex());
+        if (tbGameC.modificarProductos(productC)) {
+            JOptionPane.showMessageDialog(null, "Registro Modificado");
+            limpiar();
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al modificar");
+            limpiar();
+        }
+        productF.getNameTxt().setEditable(true);
+        productF.getSaveBtn().setEnabled(true);
+        productF.getSaveDevBtn().setEnabled(true);
+        productF.getSaveEditBtn().setEnabled(true);
+        productF.getUpdateBtn().setEnabled(true);
+        productF.getDeleteBtn().setEnabled(true);
+        productF.getDataMartBtn().setEnabled(true);
+        tablaVideojuegoC();
+    }
+
+    private void buscarProducto() {
+        productC.setNombreVideojuego(productF.getNameTxt().getText());
+        if(tbGameC.buscarProducto(productC)){
+            productF.getIdTxt().setText(String.valueOf(productC.getIdVideojuego()));
+            productF.getNameTxt().setText(productC.getNombreVideojuego());
+            productF.getGenderTxt().setText(productC.getGeneroVideojuego());
+            productF.getDateTxt().setText(formato.format(productC.getFechaLanzamiento()));
+            productF.getSalesTxt().setText(String.valueOf(productC.getNumVentas()));
+            productF.getPlatformTxt().setText(productC.getPlataforma());
+            productF.getDevCB().setSelectedItem(productC.getEmpresaDev());
+            productF.getEditCB().setSelectedItem(productC.getEmpresaEditor());
+            JOptionPane.showMessageDialog(null, "Registro buscado");
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al buscar");
+        }
+    }
+
+    private void eliminarProducto() {
+        productC.setNombreVideojuego(productF.getNameTxt().getText());
+        if (tbGameC.eliminarProducto(productC)) {
+            JOptionPane.showMessageDialog(null, "Registro Eliminado");
+            limpiar();
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al eliminar");
+            limpiar();
+        }
+    }
+
     
-    private void botonesEjecutados(ProductosForm productF){
+
+    private void botonesEjecutados(ProductosForm productF) {
         productF.getSaveBtn().addActionListener(this);
         productF.getSaveDevBtn().addActionListener(this);
         productF.getUpdateBtn().addActionListener(this);
         productF.getDeleteBtn().addActionListener(this);
-        productF.getSearchBtn().addActionListener(this);
         productF.getDataMartBtn().addActionListener(this);
         productF.getSaveEditBtn().addActionListener(this);
         productF.getDevCB().addActionListener(this);
         productF.getRefreshCompanyBtn().addActionListener(this);
         productF.getRefreshTableBtn().addActionListener(this);
+        productF.getUpdateBtn().addActionListener(this);
     }
-    
-    public void tablaVideojuegoC(){
+
+    public void tablaVideojuegoC() {
         ArrayList<Productos> listaP;
         String[] fila = new String[8];
         DefaultTableModel tablaGameC = new DefaultTableModel();
@@ -99,7 +171,7 @@ public final class ControllerProduct implements ActionListener {
             fila[7] = listaP.get(i).getEmpresaEditor();
             tablaGameC.addRow(fila);
         }
-        
+
         productF.getVideoGamesJTB().setModel(tablaGameC);
     }
 
@@ -123,8 +195,8 @@ public final class ControllerProduct implements ActionListener {
             productF.getDevCB().addItem(listaDev.get(i).getEmpresaDev());
         }
     }
-    
-    private void listaEmpresaEdit(){
+
+    private void listaEmpresaEdit() {
         productF.getEditCB().removeAllItems();
         tbGameC = new tablaVideojuegos();
         ArrayList<Productos> listEdit = tbGameC.listaEmpresaEdit();
