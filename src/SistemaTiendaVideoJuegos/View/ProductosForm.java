@@ -38,10 +38,9 @@ public class ProductosForm extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         VideoGamesTB = new javax.swing.JTable();
         deleteBtn = new javax.swing.JButton();
-        searchBtn = new javax.swing.JButton();
-        updateBtn = new javax.swing.JButton();
         dataMartBtn = new javax.swing.JButton();
         refreshTableBtn = new javax.swing.JButton();
+        updateBtn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         saveEditBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -63,6 +62,7 @@ public class ProductosForm extends javax.swing.JPanel {
         saveBtn = new javax.swing.JButton();
         saveDevBtn = new javax.swing.JButton();
         refreshCompanyBtn = new javax.swing.JButton();
+        searchBtn = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(780, 600));
         setPreferredSize(new java.awt.Dimension(780, 600));
@@ -103,27 +103,22 @@ public class ProductosForm extends javax.swing.JPanel {
         deleteBtn.setBackground(new java.awt.Color(255, 0, 0));
         deleteBtn.setForeground(new java.awt.Color(255, 255, 255));
         deleteBtn.setText("Eliminar");
-        jPanel2.add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 520, -1, -1));
-
-        searchBtn.setBackground(new java.awt.Color(0, 0, 255));
-        searchBtn.setForeground(new java.awt.Color(255, 255, 255));
-        searchBtn.setText("Buscar");
-        jPanel2.add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 520, -1, -1));
-
-        updateBtn.setBackground(new java.awt.Color(0, 0, 255));
-        updateBtn.setForeground(new java.awt.Color(255, 255, 255));
-        updateBtn.setText("Modificar");
-        jPanel2.add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 520, -1, -1));
+        jPanel2.add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 520, -1, -1));
 
         dataMartBtn.setBackground(new java.awt.Color(0, 0, 255));
         dataMartBtn.setForeground(new java.awt.Color(255, 255, 255));
         dataMartBtn.setText("Data Mart");
-        jPanel2.add(dataMartBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 520, -1, -1));
+        jPanel2.add(dataMartBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 520, -1, -1));
 
         refreshTableBtn.setBackground(new java.awt.Color(0, 0, 255));
         refreshTableBtn.setForeground(new java.awt.Color(255, 255, 255));
         refreshTableBtn.setText("Refrescar Tabla");
-        jPanel2.add(refreshTableBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 520, -1, -1));
+        jPanel2.add(refreshTableBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 520, -1, -1));
+
+        updateBtn.setBackground(new java.awt.Color(0, 0, 255));
+        updateBtn.setForeground(new java.awt.Color(255, 255, 255));
+        updateBtn.setText("Modificar");
+        jPanel2.add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 520, -1, -1));
 
         menuProductos.addTab("Tabla productos", jPanel2);
 
@@ -229,6 +224,11 @@ public class ProductosForm extends javax.swing.JPanel {
         refreshCompanyBtn.setText("Refrescar Empresas");
         jPanel1.add(refreshCompanyBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 270, -1, -1));
 
+        searchBtn.setBackground(new java.awt.Color(0, 0, 255));
+        searchBtn.setForeground(new java.awt.Color(255, 255, 255));
+        searchBtn.setText("Buscar");
+        jPanel1.add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 510, -1, -1));
+
         menuProductos.addTab("Añadir Productos", jPanel1);
 
         javax.swing.GroupLayout inicioPanelLayout = new javax.swing.GroupLayout(inicioPanel);
@@ -314,16 +314,20 @@ public class ProductosForm extends javax.swing.JPanel {
         return saveBtn;
     }
 
-    public JButton getSearchBtn() {
-        return searchBtn;
-    }
-
     public JButton getUpdateBtn() {
-        return updateBtn;
+        return searchBtn;
     }
 
     public JButton getRefreshTableBtn() {
         return refreshTableBtn;
+    }
+
+    public JTable getVideoGamesTB() {
+        return VideoGamesTB;
+    }
+
+    public JButton getSearchBtn() {
+        return searchBtn;
     }
     
     
